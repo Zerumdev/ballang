@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Product } from "@/types/types";
 
 function HomePage() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     axios
@@ -23,7 +23,10 @@ function HomePage() {
       <ul className="grid grid-cols-6 gap-x-8 gap-y-12">
         {products.map((product) => (
           <li key={product.id}>
-            <a className="relative flex flex-col group" href="/products">
+            <a
+              className="relative flex flex-col group"
+              href={"/products/" + product.id}
+            >
               <div className="relative mb-4 aspect-[3/4]">
                 <img
                   src={product.imgSrc}
