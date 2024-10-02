@@ -29,7 +29,7 @@ function SignUpPage() {
         </div>
         <div className="mt-2 w-full">
           <button
-            onClick={handleClickSignUp}
+            // onClick={handleClickSignUp}
             className="border py-4 px-3 border-slate-700 text-[15px] font-bold bg-black text-white w-full"
           >
             회원가입하기

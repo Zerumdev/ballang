@@ -3,6 +3,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Product } from "@/types/types";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 
 function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -17,15 +19,17 @@ function HomePage() {
         console.log(error);
       });
   }, []);
+
   return (
     <main className="px-5 lg:px-8 flex flex-col grow w-full items-stretch py-6 lg:py-10 max-w-screen-lg mx-auto">
       <h2 className="font-bold text-3xl text-center my-12">Trending</h2>
-      <ul className="grid grid-cols-6 gap-x-8 gap-y-12">
+      <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-8 gap-y-12">
         {products.map((product) => (
           <li key={product.id}>
-            <a
-              className="relative flex flex-col group"
-              href={"/products/" + product.id}
+            <Link
+              className="relative flex flex-col"
+              // href={"/products/" + product.id}
+              href={`/products/${product.id}`}
             >
               <div className="relative mb-4 aspect-[3/4]">
                 <img
@@ -44,7 +48,7 @@ function HomePage() {
                   <span className="font-bold">₩{product.price}</span>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

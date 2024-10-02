@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import React from "react";
 
 function Headers() {
   return (
@@ -20,7 +17,7 @@ function Headers() {
         <Link className="text-[15px] text-gray-800 font-medium" href="/sign_up">
           회원가입
         </Link>
-        <button className="text-[15px] text-gray-800 font-medium">
+        <button className="{'modal-open-btn'} text-[15px] text-gray-800 font-medium">
           로그인
         </button>
       </div>
