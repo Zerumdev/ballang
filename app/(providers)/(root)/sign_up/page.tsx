@@ -1,7 +1,7 @@
 import React from "react";
 
 function SignUpPage() {
-  const handleClickSignUp = 1;
+  // const handleClickSignUp = null;
   return (
     <main className="px-5 lg:px-8 lg:py-10 flex flex-col grow w-full items-stretch mx-auto max-w-screen-lg">
       <h2 className="text-3xl font-bold text-center my-16">회원가입</h2>

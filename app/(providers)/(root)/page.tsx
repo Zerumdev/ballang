@@ -3,7 +3,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Product } from "@/types/types";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 
 function HomePage() {
@@ -19,7 +18,6 @@ function HomePage() {
         console.log(error);
       });
   }, []);
-
   return (
     <main className="px-5 lg:px-8 flex flex-col grow w-full items-stretch py-6 lg:py-10 max-w-screen-lg mx-auto">
       <h2 className="font-bold text-3xl text-center my-12">Trending</h2>

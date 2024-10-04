@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { ProductId } from "@/types/types";
@@ -18,7 +19,7 @@ function ProductDetailPage() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [productId]);
 
   return (
     <main className="px-6 lg:px-8 py-6 lg:py-10 mx-auto max-w-screen-lg flex flex-col grow w-full items-stretch">
@@ -35,9 +36,9 @@ function ProductDetailPage() {
             href={"/brands"}
             className="text-15px border-b pb-2.5 mb-2.5 font:bold"
           >
-            <h2 className="font-semibold">
+            <h1 className="font-semibold">
               {product?.brand.nameKr} / {product?.brand.nameEn}
-            </h2>
+            </h1>
           </Link>
           <h3 className="text-lg">{product?.name}</h3>
           <ul className="grid grid-cols-5 text-[15px] my-12 gap-y-5">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ModalPage from "./modal";
 
 function Headers() {
   return (
@@ -17,7 +18,10 @@ function Headers() {
         <Link className="text-[15px] text-gray-800 font-medium" href="/sign_up">
           회원가입
         </Link>
-        <button className="{'modal-open-btn'} text-[15px] text-gray-800 font-medium">
+        <button
+          onClick={ModalPage}
+          className="{'modal-open-btn'} text-[15px] text-gray-800 font-medium"
+        >
           로그인
         </button>
       </div>

@@ -12,7 +12,7 @@ interface AuthStoreState {
   logOut: () => void;
 }
 
-export const useAuthStore = create<AuthStoreState>((set, get) => ({
+export const useAuthStore = create<AuthStoreState>((set) => ({
   isAuthInitialized: false,
   isLoggedIn: false,
   currentUser: null,
@@ -20,3 +20,15 @@ export const useAuthStore = create<AuthStoreState>((set, get) => ({
   logIn: (user: User) => set({ currentUser: user, isLoggedIn: true }),
   logOut: () => set({ currentUser: null, isLoggedIn: false }),
 }));
+
+// type ModalStoreState = {
+//   modal: React.ReactElement | null
+//   openModal: (modal: React.ReactElement) => void
+//   closeModal: () => void
+// }
+
+// export const useModalStore = create((set) => ({
+//   modal: null,
+//   openModal: () => set({ modal:  {}}),
+//   closeModal: () => set({ modal: null }),
+// })

@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Brand, Product } from "@/types/types";
+import axios from "axios";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 function BrandsPage() {
   const [brands, setBrand] = useState<Brand[]>([]);
@@ -47,9 +48,9 @@ function BrandsPage() {
       <nav className="ml-11 mb-16 mx-auto max-w-screen-lg">
         <ul className=" mr-12 gap-x-4 text-sm grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-5 justify-items-center">
           <li className="col-span-3 sm:col-span-4 md:col-span-6 mb-4">
-            <a className="hover:text-black transition-all" href="/brands">
+            <Link className="hover:text-black transition-all" href="/brands">
               ALL
-            </a>
+            </Link>
           </li>
           {brands.map((brand) => (
             <li key={brand.brandId}>
@@ -67,7 +68,7 @@ function BrandsPage() {
           <ul className="grid grid-cols-6 gap-x-8 gap-y-12">
             {products.map((product) => (
               <li key={product.id}>
-                <a
+                <Link
                   className="relative flex flex-col group"
                   href={"/products/" + product.id}
                 >
@@ -90,7 +91,7 @@ function BrandsPage() {
                       <span className="font-bold">₩{product.price}</span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
